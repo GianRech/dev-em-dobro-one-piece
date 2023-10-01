@@ -28,12 +28,11 @@
         flex-direction: row;
         align-items: flex-end;
         width: 100%;
-        padding: 30px;
-        top: -50px;
+        padding: 70px;
     }
 
     .botoes .botao img {
-        max-width: 60px;
+        max-width: 80px;
     }
 }
 
@@ -46,7 +45,7 @@
     .conteudo .logo {
         width: 170px;
         height: 75px;
-        margin-top: 63vh; /*Propriedade nova pra fazer a logo ficar abaixo da figura em praticamente qualquer tela de celular*/
+        margin-top: 61vh; /*Propriedade nova pra fazer a logo ficar abaixo da figura em praticamente qualquer tela de celular*/
     }
 
     .conteudo {
