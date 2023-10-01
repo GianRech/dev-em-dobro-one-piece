@@ -13,7 +13,7 @@
         left: 0;
         top: -20%;
         max-width: 100vw;
-        padding: 30px;
+        padding: 40px;
     }
 
     .conteudo .nome-personagem {
@@ -29,6 +29,7 @@
         align-items: flex-end;
         width: 100%;
         padding: 30px;
+        top: -50px;
     }
 
     .botoes .botao img {
@@ -38,12 +39,14 @@
 
 @media (max-width: 425px) { /*Já esse comando vai sobrescrever as instruções de estilo do 'estilos.css' quando a tela do dispositivo (ou aba aberta no PC) for ainda menor (até 425 pixels de largura)*/
     main .personagem .imagem {
-        height: auto;
+        height: 35%;
+        object-position: right;
     }
 
     .conteudo .logo {
         width: 170px;
         height: 75px;
+        margin-top: 63vh; /*Propriedade nova pra fazer a logo ficar abaixo da figura em praticamente qualquer tela de celular*/
     }
 
     .conteudo {
@@ -51,15 +54,27 @@
     }
 
     .conteudo .nome-personagem {
-        font-size: 24px;
+        font-size: 26px;
+    }
+
+    .conteudo .descricao {
+        font-size: 16px;
     }
 
     .botoes {
         padding: 20px;
-        top: -20%;
+        top: -3%;
+        gap: 10px;
     }
 
     .botoes .botao img {
         max-width: 50px;
     }
 }
+
+@media (max-height: 740px) {
+    .conteudo .descricao {
+        font-size: 11px;
+        line-height: 16px;  
+    }
+} 
