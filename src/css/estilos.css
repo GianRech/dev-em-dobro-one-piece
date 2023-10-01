@@ -1,0 +1,99 @@
+body {
+    background-color: #000000;
+    overflow: hidden;
+}
+
+main::after { /*Os dois pontos duplos servem pra puxar um pseudoelemento pro estilo, ou seja, um elemento que vai aparecer na web mas que não foi colocado no index.html*/
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    min-width: 100vw; /*Originalmente, 80vw (só que isso criava uma linha esquisita entre o fim do degradê e o início da caixa de botões)*/
+
+    background: linear-gradient(-233deg, #000000 30%, rgba(0, 0, 0, 0.1) 60%) no-repeat; /*Originalmente, background: linear-gradient(-233deg, #000000 40%, rgba(0, 0, 0, 0.4) 65%) no-repeat; (só que aí o personagem ficava muito escuro e na tela cheia o texto não ficava por cima de nenhum pedaço da imagem do personagem)*/
+}
+
+.personagem {
+    display: none;
+    height: 100vh;
+}
+
+.personagem.selecionado { /*Aqui não tem espaço entre as classes porque queremos selecionar as duas*/
+    display: block;
+}
+
+.personagem .imagem { /*Aqui tem espaço entre as classes porque estamos dizendo que queremos selecionar uma classe dentro de outra (a classe 'imagem' pertence a um elemento que está aninhado dentro do elemento que possui a classe 'personagem'*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.conteudo {
+    /*background-color: aqua;*/
+    position: absolute;
+    top: 0;
+    left: 120px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 380px;
+    z-index: 1;
+}
+
+.conteudo .nome-personagem {
+    color: #ffffff;
+    font-size: 48px;
+    font-family: "Secular One";
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.conteudo .descricao {
+    color:#ffffff;
+    font-family: "Rubik";
+    line-height: 24px;  
+}
+
+.conteudo .logo {
+    background-image: url("../imagens/one-piece-logo.png"); /*../ significa "voltar uma pasta"*/
+    background-size: cover;
+    height: 100px;
+    width: 230px;
+    margin-bottom: 35px;
+}
+
+.botoes {
+    /* background-color: aqua; */
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 180px;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.botoes .botao {
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 50%;
+    /* height: 85px; (Provavelmente não é a melhor solução, mas foi a primeira bem-sucedida em resolver o problema de ter um vão entre a parte de baixo da imagem do botão e a aura dele) */
+    line-height: 0px; /*Segunda solução que funcionou para o problema do comentário acima, e me pareceu um pouquinho mais funcional*/
+}
+
+.botoes .botao img {
+    border-radius: 50%;
+}
+
+.botoes .botao.selecionado {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 10px #d9d9d9;
+}
